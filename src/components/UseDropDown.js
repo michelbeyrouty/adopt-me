@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const useDropdown = (label, defaultState, options) => {
+const UseDropdown = (label, defaultState, options) => {
 
   const [state, updateState] = useState(defaultState);
   const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`;
@@ -15,7 +15,7 @@ const useDropdown = (label, defaultState, options) => {
         onBlur={e => updateState(e.target.value)}
         disabled={!options.length}
       >
-        <option />
+        <option>ALL</option>
         {options.map(item => (
           <option key={item} value={item}>
             {item}
@@ -27,4 +27,4 @@ const useDropdown = (label, defaultState, options) => {
   return [state, Dropdown, updateState];
 };
 
-export default useDropdown;
+export default UseDropdown;
